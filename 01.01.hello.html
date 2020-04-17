@@ -12,44 +12,16 @@
     <script src="./build/react.js"></script>
     <script src="./build/react-dom.js"></script>
     <script>
-        // アプリケーションのコード
-        // ReactDOM.render(
-        //     React.DOM.h1(
-        //         {
-        //             id: "my-heading",
-        //             className: "pretty",
-        //             htmlFor: "me",
-        //             style: {
-        //                 background: "black",
-        //                 color: "white",
-        //                 fontFamily: "Verbana",  
-        //             }
-        //         }, 
-        //         React.DOM.span(
-        //             null, React.DOM.em(null, "Hell"),
-        //         "o"),
-        //         " world!"),
-        //     document.getElementById("app")
-        // );
-        // var Component = React.createClass({
-        //     render: function () {
-        //         return React.DOM.span(null, "カスタムコンポーネント");
-        //     }
-        // });
-        // ReactDOM.render(
-        //     React.createElement(Component),
-        //     document.getElementById("app")
-        // );
-
-        // var ComponentFactory = React.createFactory(Component);
-
-        // ReactDOM.render(
-        //     ComponentFactory(),
-        //     document.getElementById("app")
-        // );
+        var Component = React.createClass({
+            render: function () {
+                return React.DOM.span(null, "私は" + this.props.name + "です");
+            }
+        });
 
         ReactDOM.render(
-            React.createElement("span", null, "Hello"),
+            React.createElement(Component, {
+                name: "ボブ",
+            }),
             document.getElementById("app")
         );
     </script>
