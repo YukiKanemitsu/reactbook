@@ -14,59 +14,42 @@
     <script>
         // var Component = React.createClass({
         //     propTypes: {
-        //         name: React.PropTypes.string.isRequired,
+        //     name: React.PropTypes.string.isRequired,
         //     },
-        //     render: function () {
-        //         return React.DOM.span(null, "私は" + this.props.name + "です");
+        //     render: function() {
+        //     return React.DOM.span(null, "My name is " + this.props.name);
         //     }
         // });
-
         // ReactDOM.render(
         //     React.createElement(Component, {
-        //         name: 123,
+        //     name: "Bob",
+        //     // name: 123,
         //     }),
         //     document.getElementById("app")
         // );
-        // var Component = React.createClass({
-        //     propTypes: {
-        //         firstName: React.PropTypes.string.isRequired,
-        //         middleName: React.PropTypes.string,
-        //         familyName: React.PropTypes.string.isRequired,
-        //         address: React.PropTypes.string,
-        //     },
-
-        //     getDefaultProps: function () {
-        //         return {
-        //             middleName: '',
-        //             address: 'なし'
-        //         };
-        //     },
-
-        //     render: function () {
-        //         // 
-        //     }
-        // });
 
         var TextAreaCounter = React.createClass({
+
             propTypes: {
                 text: React.PropTypes.string,
             },
 
-            getDefaultProps: function () {
+            getDefaultProps: function() {
                 return {
-                    text: 'aaaaaaaaaa',
+                    text: '',
                 };
             },
-
             getInitialState: function () {
                 return {
                     text: this.props.text,
-                };
+                }
             },
-            render: function () {
+            render: function() {
                 return React.DOM.div(null,
                     React.DOM.textarea({
-                        defaultValue: this.props.text,
+                        value: this.state.text,
+                        
+                        // defaultValue: this.props.text,
                     }),
                     React.DOM.h3(null, this.props.text.length)
                 );
@@ -75,7 +58,7 @@
 
         ReactDOM.render(
             React.createElement(TextAreaCounter, {
-                text: "ボaaaaaaaaブ",
+                text: "Bob",
             }),
             document.getElementById("app")
         );
